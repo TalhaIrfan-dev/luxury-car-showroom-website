@@ -3,7 +3,7 @@
 A sophisticated, responsive, and modern **multi-page luxury car showroom website** built using **HTML, CSS, and JavaScript**, showcasing premium and performance vehicles with an elegant user experience.
 
 🔗 **Live Demo:**  
-https://yourusername.github.io/luxury-car-showroom-website/
+https://talhairfan-dev.github.io/luxury-car-showroom-website/
 
 ---
 
@@ -159,7 +159,7 @@ This project is deployed using **GitHub Pages**.
 - **Entry File:** `index.html`  
 
 🔗 **Live Website:**  
-https://yourusername.github.io/luxury-car-showroom-website/
+https://talhairfan-dev.github.io/luxury-car-showroom-website/
 
 ---
 
