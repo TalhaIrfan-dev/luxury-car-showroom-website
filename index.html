@@ -363,11 +363,11 @@
         </div>
         
         <div class="nav-links">
-            <a href="Main Page Project HTML file.html#models">Models</a>
-            <a href="Main Page Project HTML file.html#services">Services</a>
-            <a href="Main Page Project HTML file.html#gallery">Gallery</a>
-            <a href="Main Page Project HTML file.html#contact">Contact</a>
-            <a href="Login Page Project HTML .html" class="login-btn" style="color: black; font-size: 18px; padding: 5px 10px">Login</a>
+            <a href="main.html#models">Models</a>
+            <a href="main.html#services">Services</a>
+            <a href="main.html#gallery">Gallery</a>
+            <a href="main.html#contact">Contact</a>
+            <a href="login.html" class="login-btn" style="color: black; font-size: 18px; padding: 5px 10px">Login</a>
         </div>
     </nav>
 
@@ -382,7 +382,7 @@
             Start your journey with the perfect ride.
         </p>
         
-        <a href="Main Page Project HTML file.html" class="discover-btn" target="_blank">Discover More</a>
+        <a href="main.html" class="discover-btn" target="_blank">Discover More</a>
         
         <div class="featured-car">
             <img src="hqdefault.webp" alt="Luxury Car">
@@ -393,7 +393,7 @@
     <section class="login-prompt">
         <h2>Access Exclusive Content</h2>
         <p>Login to unlock premium features, view detailed specifications, schedule test drives, and get personalized recommendations for your perfect luxury car.</p>
-        <a href="Login Page Project HTML .html" class="login-prompt-btn">Login Now</a>
+        <a href="login.html" class="login-prompt-btn">Login Now</a>
     </section>
 
     <!-- Footer -->
@@ -435,7 +435,7 @@
                     e.preventDefault();
                     const href = this.getAttribute('href');
                     // Check if it's a link to main page with anchor
-                    if(href.includes('Main Page Project HTML file.html')) {
+                    if(href.includes('main.html')) {
                         // Open main page with anchor
                         window.open(href, '_blank');
                     } else if(this.getAttribute('href').startsWith('#')) {
