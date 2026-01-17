@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Aclonica&display=swap" rel="stylesheet">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Premium Car Showroom | Luxury & Performance Cars</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+    /* Global */
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(#0f0f0f, #1a1a1a 220px, #1a1a1a 100%);
+        color:#fff;
+        line-height:1.6;
+    }
+
+    /* Moving Marquee - Added as per design */
+    .marquee-container {
+        background-color: #0f0f0f;
+        padding: 5px 0;
+        padding-top: 10px;
+        overflow: hidden;
+        position: relative;
+        
+    }
+
+    .marquee-content {
+        display: inline-block;
+        white-space: nowrap;
+        animation: marquee 20s linear infinite;
+        padding-left: 100%;
+    }
+
+    .marquee-content img {
+        height: 35px;
+        margin-right: 20px;
+        vertical-align: middle;
+    }
+
+    @keyframes marquee {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-100%); }
+    }
+
+    /* Top navigation (matches Figma) */
+    .topbar{
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        padding:10px 28px;
+        background:linear-gradient(#222,#111);
+       background: linear-gradient(
+        to bottom,
+        rgba(212,175,55,0.35),
+        rgba(212,175,55,0)
+    );
+        position:sticky;
+        top:0;
+        z-index:50;
+    }
+    .topbar .left-nav{
+        display:flex;
+        gap:28px;
+        align-items:center;
+    }
+    .topbar .left-nav a{
+        color:#FFDF00;
+        text-decoration:none;
+        font-size:1.05rem;
+        padding:6px 10px;
+    }
+    .topbar .left-nav a:hover{opacity:.85}
+    .topbar .right-login{
+        color:#FFDF00;
+        font-weight:600;
+    }
+
+    /* Header / Hero area */
+    .hero{
+        display:flex;
+        gap:40px;
+        padding:36px 6%;
+        align-items:flex-start;
+        justify-content:space-between;
+        background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+        background-size: cover;
+        background-position: center;
+        min-height: 60vh;
+    }
+
+    .hero-left{
+        flex:1 1 720px;
+        max-width:900px;
+    }
+
+    .hero-right{
+        width:260px;
+        text-align:center;
+    }
+
+    .site-title{
+        color:#FFDF00;
+        font-size:46px;
+        line-height:1.02;
+        font-weight:700;
+        margin-bottom:6px;
+        letter-spacing:0.5px;
+    }
+
+    .site-sub{
+        color:#EEE8AA;
+        font-size:18px;
+        font-style:italic;
+        text-decoration:underline;
+        margin-bottom:18px;
+    }
+
+    /* User info - TALHA IRFAN */
+    .user-info {
+        color: #FFDF00;
+        font-weight: bold;
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+
+    /* Search box (like Figma) */
+    .search-row{
+        margin:18px 0 22px;
+        display:flex;
+        gap:12px;
+        align-items:center;
+    }
+    .search-field{
+        flex:1;
+        background:#2b2b2b;
+        border:1px solid #D4AF37;
+        color:#ddd;
+        padding:12px 16px;
+        border-radius:8px;
+        box-shadow:inset 0 2px 6px rgba(0,0,0,.6);
+    }
+    .search-btn{
+        background:#D4AF37;
+        color:#000;
+        padding:10px 18px;
+        border-radius:8px;
+        border:none;
+        font-weight:700;
+        cursor:pointer;
+    }
+
+    /* Hero content area */
+    .hero-content {
+        max-width:750px; 
+        color:#f4f4f4; 
+        font-size:1rem;
+        margin-bottom: 20px;
+    }
+
+    /* Right logo and small tagline */
+    .hero-right .logo{
+        width:200px;
+        height:200px;
+        border-radius:50%;
+        border:5px solid #D4AF37;
+        display:inline-block;
+        box-shadow:0 6px 25px rgba(212,175,55,0.25);
+        object-fit:cover;
+        margin-top: 20px;
+    }
+    .hero-right .tag{
+        display:block;
+        margin-top:8px;
+        color:#D4AF37;
+        font-size:13px;
+        text-align:center;
+    }
+
+    /* ABOUT section - Removed logo, added Discover More button */
+    .about {
+        background: #333333;
+        padding:60px 6%;
+        text-align: center;
+    }
+
+    .about h2 {
+        color:#FFDF00;
+        font-size:2.4rem;
+        margin-bottom:20px;
+    }
+
+    .about-text{
+        color:#f4f4f4;
+        max-width:800px;
+        font-size:1.2rem;
+        margin: 0 auto 30px;
+        line-height: 1.8;
+    }
+
+    .about-text p {
+        margin-bottom: 15px;
+    }
+
+    .discover-btn {
+        display: inline-block;
+        background-color: #FFDF00;
+        color: #000;
+        padding: 12px 30px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        text-decoration: none;
+        border-radius: 30px;
+        transition: all 0.3s ease;
+        border: 2px solid #FFDF00;
+    }
+
+    .discover-btn:hover {
+        background-color: transparent;
+        color: #FFDF00;
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(255, 223, 0, 0.3);
+    }
+
+    /* --- Gallery: kept exactly as you liked --- */
+    .gallery-section{ 
+        padding:60px 6%; 
+        background:#1a1a1a; 
+    }
+    
+    .gallery-section h2 {
+        color:#FFDF00; 
+        text-align:center; 
+        font-size:2.4rem; 
+        margin-bottom:18px;
+    }
+    
+    .gallery-subtitle {
+        text-align: center;
+        color: #EEE8AA;
+        font-size: 1.2rem;
+        margin-bottom: 40px;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .gallery-grid{
+        display:grid;
+        grid-template-columns:repeat(auto-fill,minmax(250px,1fr));
+        gap:22px;
+        max-width:1400px;
+        margin:0 auto;
+    }
+    
+    .gallery-item{
+        background:#2a2a2a;
+        border-radius:10px;
+        overflow:hidden;
+        transition:all .3s; 
+        border:2px solid transparent;
+    }
+    
+    .gallery-item:hover{ 
+        transform:translateY(-10px); 
+        border-color:#D4AF37; 
+        box-shadow:0 10px 25px rgba(212,175,55,0.12); 
+    }
+    
+    .gallery-img{ 
+        width:100%; 
+        height:180px; 
+        object-fit:cover; 
+        border-bottom:2px solid #D4AF37;
+    }
+    
+    .gallery-caption{ 
+        padding:12px; 
+        text-align:center; 
+        color:#FFDF00; 
+        font-weight:500;
+    }
+
+    .gallery-price {
+        color: #ddd;
+        font-weight: 400;
+        font-size: 0.9rem;
+        margin-top: 5px;
+    }
+
+    /* Models Section - Redesigned according to your design */
+    .models-section{ 
+        padding:60px 6%; 
+        background:#333333; 
+        text-align: center;
+    }
+    
+    .models-section h2 {
+        color:#FFDF00; 
+        font-size:2.4rem; 
+        margin-bottom:10px;
+    }
+    
+    .models-subtitle {
+        text-align: center;
+        color: #EEE8AA;
+        font-size: 1.2rem;
+        margin-bottom: 40px;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Two-column layout for models as shown in design */
+    .models-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .model-column {
+        background: #2a2a2a;
+        border-radius: 10px;
+        padding: 25px;
+        border: 2px solid #D4AF37;
+    }
+
+    .model-column h3 {
+        color: #FFDF00;
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .model-list {
+        list-style: none;
+        text-align: left;
+    }
+
+    .model-list li {
+        color: #f4f4f4;
+        font-size: 1.1rem;
+        margin-bottom: 15px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    }
+
+    .model-list li:last-child {
+        border-bottom: none;
+    }
+
+    .model-name {
+        color: #FFDF00;
+        font-weight: bold;
+        font-size: 1.3rem;
+    }
+
+    .model-price {
+        color: #D4AF37;
+        font-weight: bold;
+        float: right;
+    }
+
+    .model-description {
+        color: #ddd;
+        font-size: 0.95rem;
+        margin-top: 5px;
+        line-height: 1.5;
+    }
+
+    /* Services Section - Fixed alignment */
+    .services-section{ 
+        padding:60px 6%; 
+        background:#1a1a1a;
+        text-align: center;
+    }
+    
+    .services-section h2 {
+        color:#FFDF00; 
+        font-size:2.4rem; 
+        margin-bottom:10px;
+    }
+    
+    .services-subtitle {
+        text-align: center;
+        color: #EEE8AA;
+        font-size: 1.2rem;
+        margin-bottom: 40px;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Services grid with proper alignment */
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 25px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .service-item {
+        background: rgba(212, 175, 55, 0.1);
+        padding: 25px;
+        border-radius: 10px;
+        border: 1px solid rgba(212, 175, 55, 0.3);
+        transition: all 0.3s ease;
+        text-align: center;
+    }
+
+    .service-item:hover {
+        background: rgba(212, 175, 55, 0.2);
+        transform: translateY(-5px);
+        border-color: #D4AF37;
+        box-shadow: 0 10px 20px rgba(212, 175, 55, 0.15);
+    }
+
+    .service-icon {
+        color: #FFDF00;
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+    }
+
+    .service-name {
+        color: #FFDF00;
+        font-size: 1.3rem;
+        font-weight: 500;
+    }
+
+    /* Contact Section */
+    .contact-section{ 
+        padding:60px 6%; 
+        background:#333333;
+        text-align: center;
+    }
+    
+    .contact-section h2 {
+        color:#FFDF00; 
+        font-size:2.4rem; 
+        margin-bottom:10px;
+    }
+
+    .contact-container {
+        max-width: 800px;
+        margin: 0 auto;
+        background: #444;
+        padding: 35px;
+        border-radius: 10px;
+        border: 2px solid #D4AF37;
+    }
+
+    .contact-form {
+        display: grid;
+        gap: 20px;
+        text-align: left;
+    }
+
+    .form-group label {
+        display: block;
+        color: #FFDF00;
+        margin-bottom: 8px;
+        font-weight: 500;
+    }
+
+    .form-group input {
+        width: 100%;
+        padding: 12px;
+        background: #555;
+        border: 1px solid #D4AF37;
+        border-radius: 5px;
+        color: white;
+        font-size: 1rem;
+    }
+
+    .form-group input:focus {
+        outline: none;
+        border-color: #FFDF00;
+        box-shadow: 0 0 10px rgba(255, 223, 0, 0.3);
+    }
+
+    .contact-submit-btn {
+        background: #D4AF37;
+        color: #000;
+        border: none;
+        padding: 12px 30px;
+        font-size: 1.1rem;
+        font-weight: bold;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 100%;
+        transition: all 0.3s ease;
+    }
+
+    .contact-submit-btn:hover {
+        background: #FFDF00;
+        transform: translateY(-2px);
+    }
+
+    /* Contact Info */
+    .contact-info-section{ 
+        background:#1a1a1a; 
+        padding:40px 6%;
+    }
+    
+    .contact-grid{ 
+        display:grid; 
+        grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); 
+        gap:100px; 
+        max-width:1200px; 
+        margin:0 auto;
+    }
+    
+    .contact-details h3, .navigation-links h3{ 
+        color:#D4AF37; 
+        font-size:1.8rem; 
+        margin-bottom:15px; 
+        border-bottom:2px solid #D4AF37; 
+        padding-bottom:8px;
+    }
+    
+    .contact-item{ 
+        color:#D4AF37; 
+        margin-bottom:20px;
+        font-size: 1.1rem;
+    }
+    
+    .contact-item span, .contact-item a{ 
+        color:#777; 
+        margin-left:6px;
+    }
+    
+    .contact-item a:hover {
+        color: #FFDF00;
+        text-decoration: underline;
+    }
+    
+    .nav-list{ 
+        list-style:none;
+    }
+    
+    .nav-list li {
+        margin-bottom: 0px;
+    }
+    
+    .nav-list a{ 
+        color:#777; 
+        text-decoration:none;
+        display: block;
+        padding: 6px 0;
+        transition: all 0.3s ease;
+    }
+    
+    .nav-list a:hover{ 
+        color:#FFDF00; 
+        transform:translateX(6px);
+    }
+
+    /* Footer Image and Copyright */
+    .main-footer{ 
+        text-align:center; 
+        padding:30px 6%; 
+        background:#0b0b0b; 
+        color:#888; 
+        border-top:1px solid rgba(212,175,55,0.06);
+        position: relative;
+    }
+
+    .footer-image {
+        width: 200px;
+        margin: 0 auto 20px;
+        display: block;
+    }
+
+    .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            color: #D4AF37;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #FFDF00;
+            transform: translateY(-3px);
+        }
+
+    /* Responsive */
+    @media (max-width: 1100px){
+        .site-title{ font-size:40px }
+        .models-container {
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+    }
+    
+    @media (max-width: 860px){
+        .hero{ 
+            flex-direction:column; 
+            gap:18px; 
+            align-items:center;
+            text-align: center;
+        }
+        
+        .hero-right{ 
+            order: -1;
+            width: 180px;
+        }
+        
+        .site-title{ text-align:center }
+        
+        .search-row {
+            flex-direction: column;
+        }
+        
+        .search-btn {
+            width: 100%;
+        }
+        
+        .gallery-grid{ 
+            grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
+        }
+    }
+    
+    @media (max-width: 600px){
+        .site-title{ font-size:32px }
+        .gallery-grid{ grid-template-columns:1fr 1fr }
+        .services-grid {
+            grid-template-columns: 1fr;
+        }
+        .contact-grid {
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+    }
+    
+    @media (max-width: 480px){
+        .site-title{ font-size:28px }
+        .gallery-grid{ grid-template-columns:1fr 1fr }
+        .gallery-caption {
+            font-size: 0.9rem;
+        }
+    }
+</style>
+</head>
+<body>
+
+    <!-- Top navigation (Model, Services, Gallery, Login) -->
+    <div class="topbar" role="navigation" aria-label="Main navigation">
+        <div class="left-nav">
+            <a href="#models">Model</a>
+            <a href="#services">Services</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#contact">Contact Us</a>
+        </div>
+        <div class="right-login">
+            <a href="Login Page Project HTML .html" style="color:#FFDF00; text-decoration:none;">Login</a>
+        </div>
+    </div>
+
+    <!-- Moving Marquee with car image -->
+    <div class="marquee-container">
+        <div class="marquee-content">
+            <img src="golden-car-marquee.jpg" alt="Car Showroom Marquee">
+            <span style="color: #D4AF37; font-weight: bold;">Premium Car Showroom | Luxury & Performance Cars | Drive Your Dreams</span>
+        </div>
+    </div>
+
+    <!-- Hero / Header area -->
+    <section class="hero" aria-label="Hero">
+        <div class="hero-left">
+            <!-- User info TALHA IRFAN -->
+            <div class="user-info">TALHA IRFAN</div>
+            
+            <div class="site-title" style="font-family: 'Aclonica', sans-serif;">Welcome to  
+                <img src="golden-car-marquee.jpg" alt="Talha Irfan" height="30px" style="margin: 0 100px; vertical-align: middle;"> 
+                <br><strong>Premium Car Showroom</strong></div>
+            <div class="site-sub" style="margin-top: 50px;">Luxury &amp; Performance Cars</div>
+
+            <!-- Search box -->
+            <div class="search-row">
+                <input class="search-field" type="search" placeholder="Search">
+                <button class="search-btn">Search</button>
+            </div>
+
+            <!-- Content as per design -->
+            <div class="hero-content">
+                Discover our collection of high-performance, luxury cars that combine style, technology, and power. 
+                Start your journey with the perfect ride.
+            </div>
+        </div>
+        <aside class="hero-right" aria-label="Brand">
+            <img src="My logo.webp" alt="Talha Irfan Logo" class="logo">
+            <span class="tag">Luxury & Performance Cars</span>
+        </aside>
+    </section>
+
+    <!-- ABOUT Section - No logo, just text and Discover More button -->
+    <section class="about" id="about">
+        <h2>About</h2>
+        <div class="about-text">
+            <p>We Offer Luxurious and comfortable cars with progressive design and innovative features for a smooth ride, redefined with state-of-the-art technology.</p>
+            <p>The ultimate blend of luxury and driving performance will be the best experience for our customers.</p>
+        </div>
+        <a href="#gallery" class="discover-btn">Discover More</a>
+    </section>
+
+    <!-- GALLERY Section - Kept exactly as you like -->
+    <section id="gallery" class="gallery-section">
+        <h2>Gallery</h2>
+        <p class="gallery-subtitle">Explore our exclusive collection of luxury and performance cars.</p>
+        
+        <div class="gallery-grid">
+            <!-- Row 1 -->
+            <div class="gallery-item">
+                <img src="car2.webp" alt="BMW" class="gallery-img">
+                <div class="gallery-caption">BMW</div>
+            </div>
+            <div class="gallery-item">
+                <img src="car1.jpg" alt="Mercedes-Benz" class="gallery-img">
+                <div class="gallery-caption">Mercedes-Benz</div>
+            </div>
+            <div class="gallery-item">
+                <img src="car3.webp" alt="Audi" class="gallery-img">
+                <div class="gallery-caption">Audi</div>
+            </div>
+            <div class="gallery-item">
+                <img src="car4.jpg" alt="Others" class="gallery-img">
+                <div class="gallery-caption">Others</div>
+            </div>
+            
+            <!-- Row 2 -->
+            <div class="gallery-item">
+                <img src="car5.avif" alt="Ford Mustang GTD" class="gallery-img">
+                <div class="gallery-caption">Ford Mustang GTD</div>
+            </div>
+            <div class="gallery-item">
+                <img src="car6.webp" alt="Ford Mustang GT" class="gallery-img">
+                <div class="gallery-caption">Ford Mustang GT</div>
+            </div>
+            <div class="gallery-item">
+                <img src="car7.jpg" alt="Lamborghini Huracan" class="gallery-img">
+                <div class="gallery-caption">Lamborghini Huracan</div>
+            </div>
+            <div class="gallery-item">
+                <img src="car8.jpg" alt="Lamborghini Urus" class="gallery-img">
+                <div class="gallery-caption">Lamborghini Urus</div>
+            </div>
+            
+            <!-- Row 3 -->
+            <div class="gallery-item">
+                <img src="car9.jpg" alt="Lamborghini FKP 37" class="gallery-img">
+                <div class="gallery-caption">Lamborghini FKP 37</div>
+            </div>
+            <div class="gallery-item">
+                <img src="car10.jpg" alt="Lamborghini Sian" class="gallery-img">
+                <div class="gallery-caption">Lamborghini Sian</div>
+            </div>
+            <div class="gallery-item">
+                <img src="car11.webp" alt="LaFerrari Hybrid" class="gallery-img">
+                <div class="gallery-caption">LaFerrari Hybrid</div>
+            </div>
+            <div class="gallery-item">
+                <img src="car12.jpg" alt="Ferrari SF90" class="gallery-img">
+                <div class="gallery-caption">Ferrari SF90</div>
+            </div>
+            
+            <!-- Row 4 -->
+            <div class="gallery-item">
+                <img src="car13.jpg" alt="BMW i8" class="gallery-img">
+                <div class="gallery-caption">BMW i8</div>
+            </div>
+            <div class="gallery-item">
+                <img src="car14.jpg" alt="Mercedes AMG" class="gallery-img">
+                <div class="gallery-caption">Mercedes AMG</div>
+            </div>
+            <div class="gallery-item">
+                <img src="car15.jpg" alt="Mercedes GLC 300" class="gallery-img">
+                <div class="gallery-caption">Mercedes GLC 300</div>
+            </div>
+            <div class="gallery-item">
+                <img src="car16.jpeg" alt="Audi R8" class="gallery-img">
+                <div class="gallery-caption">Audi R8</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODELS Section - Redesigned according to your Figma -->
+    <section id="models" class="models-section">
+        <h2>Models</h2>
+        <p class="models-subtitle">Explore our exclusive collection of luxury and performance cars.</p>
+        
+        <!-- Two-column layout as shown in your design -->
+        <div class="models-container">
+            <!-- Column 1 -->
+            <div class="model-column">
+                <h3>Luxury Sedans</h3>
+                <ul class="model-list">
+                    <li>
+                        <span class="model-name">Mercedes-Benz S-Class</span>
+                        <span class="model-price">$120,000</span>
+                        <div class="model-description">Luxury and comfort redefined with state-of-the-art technology.</div>
+                    </li>
+                    <li>
+                        <span class="model-name">BMW 7 Series</span>
+                        <span class="model-price">$110,000</span>
+                        <div class="model-description">The ultimate blend of luxury and driving performance.</div>
+                    </li>
+                    <li>
+                        <span class="model-name">Audi A8</span>
+                        <span class="model-price">$100,000</span>
+                        <div class="model-description">Progressive design and innovative features for a smooth ride.</div>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Column 2 -->
+            <div class="model-column">
+                <h3>Sports & Performance</h3>
+                <ul class="model-list">
+                    <li>
+                        <span class="model-name">Lamborghini</span>
+                        <span class="model-price">$140,000</span>
+                        <div class="model-description">Attractive and dashing design with so much power and speed.</div>
+                    </li>
+                    <li>
+                        <span class="model-name">Mustang</span>
+                        <span class="model-price">$90,000</span>
+                        <div class="model-description">Combining performance, style, and affordability in one.</div>
+                    </li>
+                    <li>
+                        <span class="model-name">Ferrari</span>
+                        <span class="model-price">$150,000</span>
+                        <div class="model-description">Luxury sports car manufacturer known for high performance & exclusivity.</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES Section - With fixed alignment -->
+    <section id="services" class="services-section">
+        <h2>Services</h2>
+        <p class="services-subtitle">We offer world-class services for our customers:</p>
+        
+        <div class="services-grid">
+            <div class="service-item">
+                <div class="service-icon"><i class="fas fa-money-check-alt"></i></div>
+                <div class="service-name">Car Financing</div>
+            </div>
+            
+            <div class="service-item">
+                <div class="service-icon"><i class="fas fa-car"></i></div>
+                <div class="service-name">Test Drives</div>
+            </div>
+            
+            <div class="service-item">
+                <div class="service-icon"><i class="fas fa-cogs"></i></div>
+                <div class="service-name">Customizations</div>
+            </div>
+            
+            <div class="service-item">
+                <div class="service-icon"><i class="fas fa-headset"></i></div>
+                <div class="service-name">24/7 Customer Support</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT Section -->
+    <section id="contact" class="contact-section">
+        <h2>Contact Us</h2>
+        
+        <div class="contact-container">
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input id="name" type="text" placeholder="Enter your name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input id="email" type="email" placeholder="Enter your email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <input id="message" type="text" placeholder="Enter your message" required>
+                </div>
+                
+                <button type="submit" class="contact-submit-btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- CONTACT INFO & NAVIGATION -->
+    <section class="contact-info-section">
+        <div class="contact-grid">
+            <!-- Contact Details -->
+            <div class="contact-details">
+                <h3>Contact</h3>
+                <div class="contact-item">
+                    <strong>Address:</strong> 
+                    <span>Sukkur Iba University near River city hospital</span>
+                </div>
+                <div class="contact-item">
+                    <strong>Email:</strong> 
+                    <a href="mailto:talhairfan.bssef24@iba-suk.edu.pk">talhairfan.bssef24@iba-suk.edu.pk</a>
+                </div>
+                <div class="contact-item">
+                    <strong>Phone:</strong> 
+                    <span>+92 345 4316787</span>
+                </div>
+            </div>
+            
+            <!-- Navigation Links -->
+            <div class="navigation-links">
+                <h3>NAVIGATION</h3>
+                <ul class="nav-list">
+                    <li><a href="Login Page Project HTML .html" target="_blank">Login</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#models">Models</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer with image and copyright -->
+    <footer class="main-footer">
+        <p>&copy; 2024 Premium Car Showroom. All Rights Reserved.</p>
+        <p>Experience the pinnacle of automotive excellence</p>
+        
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+
+    </footer>
+
+<script>
+// Smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if(!href || href === '#') return;
+        
+        const target = document.querySelector(href);
+        if(target) {
+            e.preventDefault();
+            window.scrollTo({ 
+                top: target.offsetTop - 70, 
+                behavior: 'smooth' 
+            });
+        }
+    });
+});
+
+// Contact form submission
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert('Thank you for your message! We will contact you soon.');
+    this.reset();
+});
+
+// Gallery item hover effects
+document.querySelectorAll('.gallery-item').forEach(item => {
+    item.addEventListener('mouseenter', () => {
+        item.style.transform = 'translateY(-10px)';
+    });
+    
+    item.addEventListener('mouseleave', () => {
+        item.style.transform = 'translateY(0)';
+    });
+});
+
+// Service item hover effects
+document.querySelectorAll('.service-item').forEach(item => {
+    item.addEventListener('mouseenter', () => {
+        item.style.transform = 'translateY(-5px)';
+    });
+    
+    item.addEventListener('mouseleave', () => {
+        item.style.transform = 'translateY(0)';
+    });
+});
+
+// Search functionality
+const searchBtn = document.querySelector('.search-btn');
+const searchInput = document.querySelector('.search-field');
+
+searchBtn.addEventListener('click', function() {
+    if(searchInput.value.trim() !== '') {
+        alert(`Searching for: ${searchInput.value}`);
+        searchInput.value = '';
+    }
+});
+
+searchInput.addEventListener('keypress', function(e) {
+    if(e.key === 'Enter') {
+        searchBtn.click();
+    }
+});
+</script>
+</body>
+</html>
